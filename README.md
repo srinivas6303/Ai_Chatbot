@@ -59,9 +59,10 @@ Combines:
 ---
 
 ### 6️⃣ Sending Request  
-
+```java
 ResponseEntity<String> response =
 restTemplate.postForEntity(url, entity, String.class);
+```
 
 
 - `url` → API endpoint  
@@ -72,7 +73,9 @@ restTemplate.postForEntity(url, entity, String.class);
 
 ### 7️⃣ Getting Response  
 
+```java
 response.getBody();
+```
 
 
 👉 Returns raw JSON response from the API.
@@ -91,11 +94,11 @@ We use ObjectMapper to extract only required data (text).
 
 
 User → Controller → Service → RestTemplate → Gemini API
-↓
+→
 JSON Response
-↓
+→
 ObjectMapper extracts text
-↓
+→
 Return to User
 
 
@@ -121,11 +124,13 @@ GOOGLE_API_KEY
 ### 3️⃣ Generate Content Response  
 
 
+```java
 GenerateContentResponse response = client.models.generateContent(
-"gemini-3-flash-preview",
-userMessage,
-config
+    "gemini-3-flash-preview",
+    userMessage,
+    config
 );
+```
 
 
 **Pass:**
